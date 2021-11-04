@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import styled from 'styled-components'
+import MainNav from "./components/MainNav"
+import RandomRecipe from "./components/RandomRecipe"
+import MainPage from "./pages/main/MainPage"
+
+const Container = styled.div`
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--light-beige);
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container>
+        <MainNav />
+        <Switch>
+          <Route exact path="/">
+            <MainPage />
+          </Route>
+          <Route path="/todaysrecipe">
+            <RandomRecipe/>
+          </Route>
+        </Switch>
+      </Container>
+    </Router>
   );
 }
 
