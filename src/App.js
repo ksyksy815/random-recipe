@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 import styled from 'styled-components'
 import MainNav from "./components/MainNav"
 import RandomRecipe from "./components/RandomRecipe"
@@ -15,14 +15,7 @@ function App() {
     <Router>
       <Container>
         <MainNav />
-        <Switch>
-          <Route exact path="/">
-            <MainPage />
-          </Route>
-          <Route path="/todaysrecipe">
-            <RandomRecipe/>
-          </Route>
-        </Switch>
+        <MainPage />
       </Container>
     </Router>
   );

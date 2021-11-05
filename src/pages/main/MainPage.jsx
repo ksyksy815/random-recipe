@@ -1,5 +1,6 @@
-import { useHistory } from 'react-router-dom'
+import { useState } from 'react'
 import styled from 'styled-components'
+import RandomRecipe from '../../components/RandomRecipe'
 
 const StyledMainPage = styled.div`
   width: 100%;
@@ -10,7 +11,7 @@ const StyledMainPage = styled.div`
 
   #main {
     padding: 5rem;
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
@@ -34,24 +35,27 @@ const StyledMainPage = styled.div`
 `
 
 export default function MainPage() {
-  const history = useHistory()
-  
+  const [recipeOn, setRecipeOn] = useState(false)
+
   const handleClick = () => {
-    history.push('/todaysrecipe')
+    setRecipeOn(true)
   }
-  
   return (
     <StyledMainPage>
-      { loading ? <div>Loading...</div> :
-        <div id="main">
-          <div>
-            <h1>EAT WELL,</h1>
-            <h1>LIVE WELL!</h1>
-          </div>
-          <p>Today's Food gives you a random food recipe that you can use to make a meal for today.</p>
-          <button onClick={handleClick}>Get today's recipe</button>
-        </div>
-      }
+      <div id="main">
+        {
+          recipeOn ? 
+          <RandomRecipe /> :
+          <>
+            <div>
+              <h1>EAT WELL,</h1>
+              <h1>LIVE WELL!</h1>
+            </div>
+            <p>Today's Food gives you a random food recipe that you can use to make a meal for today.</p>
+            <button onClick={handleClick}>Get today's recipe</button>
+          </>
+        }
+      </div>
     </StyledMainPage>
   )
 }
