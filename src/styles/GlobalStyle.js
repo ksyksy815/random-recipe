@@ -19,8 +19,12 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
   }
 
-  ul, ol {
+  ul {
     list-style: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 `
 

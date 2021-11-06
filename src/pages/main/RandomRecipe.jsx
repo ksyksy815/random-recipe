@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import { fetchRandom } from '../pages/main/fetchRandom'
+import { fetchRandom } from './fetchRandom'
 
 const StyledRandomRecipe = styled.div`
   #recipe-container {

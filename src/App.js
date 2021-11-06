@@ -1,8 +1,10 @@
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import styled from 'styled-components'
 import MainNav from "./components/MainNav"
-import RandomRecipe from "./components/RandomRecipe"
 import MainPage from "./pages/main/MainPage"
+import Category from './pages/category/Category'
+import CategoryByName from "./pages/category/CategoryByName"
+import RecipeByFoodName from './components/RecipeByFoodName'
 
 const Container = styled.div`
   width: 100vw;
@@ -15,7 +17,12 @@ function App() {
     <Router>
       <Container>
         <MainNav />
-        <MainPage />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/category/:categoryName" element={<CategoryByName />} />
+          <Route path="/recipe/:mealID" element={<RecipeByFoodName />} />
+        </Routes>
       </Container>
     </Router>
   );

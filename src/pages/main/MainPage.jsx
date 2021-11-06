@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import RandomRecipe from '../../components/RandomRecipe'
+import RandomRecipe from './RandomRecipe'
 
 const StyledMainPage = styled.div`
   width: 100%;
@@ -12,14 +12,15 @@ const StyledMainPage = styled.div`
   #main {
     padding: 5rem;
     width: 100%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     background: var(--beige);
-    border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 
     button {
+      width: 200px;
       padding: 1rem;
       border: none;
       background: var(--light-beige);

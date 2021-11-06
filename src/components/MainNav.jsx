@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
@@ -11,10 +11,15 @@ const StyledNav = styled.nav`
   align-items: center;
   color: var(--white);
   padding: 0 3rem;
+  z-index: 10;
 
   ul {
     display: flex;
     column-gap: 3rem;
+    
+    a {
+      color: #fff;
+    }
   }
 `
 
@@ -23,8 +28,8 @@ export default function MainNav() {
     <StyledNav>
       <h1>Today's Food</h1>
       <ul>
-        <li>Home</li>
-        <li>Category</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/category">Category</Link></li>
         <li>Something</li>
       </ul>
     </StyledNav>
