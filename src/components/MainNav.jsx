@@ -30,7 +30,6 @@ export default function MainNav() {
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/category">Category</Link></li>
-        <li>Something</li>
       </ul>
     </StyledNav>
   )

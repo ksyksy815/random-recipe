@@ -55,6 +55,7 @@ export default function RandomRecipe() {
         loading ? <div>Loading...</div> :
         <div id="recipe-container">
           <h2 id="recipe-title">{recipe.name}</h2>
+          <img src={recipe.imageURL} alt={recipe.name} />
           <div id="incredient-and-instruction">
             <div id="ingredient-box">
               {
