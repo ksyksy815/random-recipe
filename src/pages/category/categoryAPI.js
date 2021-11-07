@@ -16,6 +16,7 @@ export const fetchByCategory = async (categoryName) => {
   return meals
 }
 
+// FoodName in fact is a food ID. Needs to change
 export const fetchRecipeByFoodName = async (foodName) => {
   const URL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodName}`
   const recipe = await axios.get(URL).then(res => res.data.meals[0])
