@@ -29,7 +29,13 @@ export default function MainNav() {
       <h1>Today's Food</h1>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/category">Category</Link></li>
+        <li><Link to="/category">Recipes by Category</Link></li>
+        <li>
+          <Link to="/area">Recipes by Area</Link>
+        </li>
+        <li>
+          <Link to="/ingredient">Recipes by Ingredient</Link>
+        </li>
       </ul>
     </StyledNav>
   )
