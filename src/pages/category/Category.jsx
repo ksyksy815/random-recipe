@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { PageStyle } from '../../styles/PageStyle.style'
+import { PageStyle } from "../../styles/PageStyle.style"
 import CategoryList from './CategoryList'
 import { fetchCategory } from './categoryAPI'
 
